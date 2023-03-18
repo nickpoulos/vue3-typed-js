@@ -9,33 +9,126 @@ import VueTyped from './VueTyped.js';
 
 export default {
   props: {
-    strings: Array,
-    typeSpeed: Number,
-    startDelay: Number,
-    backSpeed: Number,
-    smartBackspace: Boolean,
-    shuffle: Boolean,
-    backDelay: Number,
-    fadeOut: Boolean,
-    fadeOutClass: String,
-    fadeOutDelay: Number,
-    loop: Boolean,
-    loopCount: Number,
-    showCursor: Boolean,
-    autoInsertCss: Boolean,
-    attr: String,
-    bindInputFocusEvents: Boolean,
-    contentType: String,
-    onComplete: Function,
-    preStringTyped: Function,
-    onStringTyped: Function,
-    onLastStringBackspaced: Function,
-    onTypingPaused: Function,
-    onTypingResumed: Function,
-    onReset: Function,
-    onStop: Function,
-    onStart: Function,
-    onDestroy: Function,
+    strings: {
+      type: Array,
+      default: () => [],
+    },
+    stringsElement: {
+      type: String,
+      default: null,
+    },
+    typeSpeed: {
+      type: Number,
+      default: 30,
+    },
+    startDelay: {
+      type: Number,
+      default: 0,
+    },
+    backSpeed: {
+      type: Number,
+      default: 0,
+    },
+    smartBackspace: {
+      type: Boolean,
+      default: true,
+    },
+    shuffle: {
+      type: Boolean,
+      default: false,
+    },
+    backDelay: {
+      type: Number,
+      default: 700,
+    },
+    fadeOut: {
+      type: Boolean,
+      default: false,
+    },
+    fadeOutClass: {
+      type: String,
+      default: 'typed-fade-out',
+    },
+    fadeOutDelay: {
+      type: Number,
+      default: 500,
+    },
+    loop: {
+      type: Boolean,
+      default: false,
+    },
+    loopCount: {
+      type: Number,
+      default: Infinity,
+    },
+    showCursor: {
+      type: Boolean,
+      default: true,
+    },
+    cursorChar: {
+      type: String,
+      default: '|',
+    },
+    autoInsertCss: {
+      type: Boolean,
+      default: true,
+    },
+    attr: {
+      type: String,
+      default: null,
+    },
+    bindInputFocusEvents: {
+      type: Boolean,
+      default: false,
+    },
+    contentType: {
+      type: String,
+      default: 'html',
+    },
+    onBegin: {
+      type: Function,
+      default: null,
+    },
+    onComplete: {
+      type: Function,
+      default: null,
+    },
+    preStringTyped: {
+      type: Function,
+      default: null,
+    },
+    onStringTyped: {
+      type: Function,
+      default: null,
+    },
+    onLastStringBackspaced: {
+      type: Function,
+      default: null,
+    },
+    onTypingPaused: {
+      type: Function,
+      default: null,
+    },
+    onTypingResumed: {
+      type: Function,
+      default: null,
+    },
+    onReset: {
+      type: Function,
+      default: null,
+    },
+    onStop: {
+      type: Function,
+      default: null,
+    },
+    onStart: {
+      type: Function,
+      default: null,
+    },
+    onDestroy: {
+      type: Function,
+      default: null,
+    },
   },
   data() {
     return {
